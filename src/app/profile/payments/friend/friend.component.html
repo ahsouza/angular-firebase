@@ -1,0 +1,49 @@
+
+<mat-grid-list cols="2" rowHeight="1:1">
+  
+  <mat-grid-tile>
+        
+    <section>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{payment.name}}</mat-card-title>
+          <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <p>
+            {{payment.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button color="accent" (click)="sendPayment()" mat-button>{{buttons.left.title}}</button>
+          <button  color="basic" (click)="requestPayment()" mat-button>{{buttons.right.title}}</button>
+        </mat-card-actions>
+      </mat-card>
+    </section>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile>
+    
+    <section>
+      <mat-card class="example-card">
+      <mat-card-content>
+        <form>
+          <mat-form-field>
+            <mat-label>{{inputs.friend.label}}</mat-label>
+            <input matInput [(ngModel)]="payment.name" name="anonymous1"/>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>{{inputs.description.label}}</mat-label>
+            <input matInput [(ngModel)]="payment.description" name="anonymous2"/>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      </mat-card>
+    </section>
+
+  </mat-grid-tile>
+</mat-grid-list>
+
